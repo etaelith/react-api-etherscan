@@ -1,5 +1,5 @@
 import {Route, Routes} from 'react-router-dom'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import NavBar from './components/NavBar';
 
@@ -12,6 +12,15 @@ function App() {
 
   const [ walletTest, setWalletTest] = useState('')
 
+  useEffect(() => {
+    if (localStorage.getItem('walletSave')) {
+      setWalletTest(JSON.parse(localStorage.getItem('walletSave')))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('walletSave', JSON.stringify(walletTest))
+  }, [walletTest])
 
   return (
     <>
