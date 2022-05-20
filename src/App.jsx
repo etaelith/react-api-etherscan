@@ -6,8 +6,9 @@ import NavBar from './components/NavBar';
 import FetchTest from './routes/FetchTest';
 import TableHead from './routes/TableHead';
 import PrintDate from './utils/PrintDate';
-import NoRes from './routes/NoRes';
+import NoRes from './components/NoRes';
 import useDarkMode from './hooks/useDarkMode';
+import Tablet from './routes/Tablet';
 
 function App() {
   useDarkMode()
@@ -38,6 +39,7 @@ function App() {
                 </TableHead>  
               </>}>
           </Route>
+          <Route path='/Tablet' element={<Tablet/>}></Route>
           <Route path='*' element={<NoRes/>}/>
         </Route>
       </Routes>

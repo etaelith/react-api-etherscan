@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-export const useFetch = (url) => {
+ const UseFetch = (url) => {
     const API = process.env.REACT_APP_API;
     const [data, setData] = useState([])
     const [error, setError] = useState('')
@@ -18,3 +18,4 @@ export const useFetch = (url) => {
   return {data, error, loadingFetch}
 }
 
+export default UseFetch
