@@ -7,9 +7,10 @@ import FetchTest from './routes/FetchTest';
 import TableHead from './routes/TableHead';
 import PrintDate from './utils/PrintDate';
 import NoRes from './routes/NoRes';
+import useDarkMode from './hooks/useDarkMode';
 
 function App() {
-
+  useDarkMode()
   const [ walletTest, setWalletTest] = useState('')
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function App() {
   }, [walletTest])
 
   return (
-    <>
+    <div className="min-h-screen bg-white border-b dark:bg-gray-800 dark:border-gray-700 h-full transition duration-500">
       <NavBar/>
       <Routes>
         <Route path='/'>
@@ -40,7 +41,7 @@ function App() {
           <Route path='*' element={<NoRes/>}/>
         </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
