@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-export const useFormulario = (initialState = {}) => {
+export const useForm = (initialState = {}) => {
     const [inputs, setInputs] = useState(initialState)
 
     const handleChange = (e) => {

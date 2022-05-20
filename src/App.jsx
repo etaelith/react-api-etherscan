@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 
 import NavBar from './components/NavBar';
 
-
-import FetchTest from './utils/FetchTest';
-import TableHead from './components/TableHead';
+import FetchTest from './routes/FetchTest';
+import TableHead from './routes/TableHead';
 import PrintDate from './utils/PrintDate';
+import NoRes from './routes/NoRes';
 
 function App() {
 
@@ -25,11 +25,10 @@ function App() {
   return (
     <>
       <NavBar/>
-
       <Routes>
         <Route path='/'>
           <Route
-            index path='/'
+            index
             element = {
               <>
                 <FetchTest setWalletTest={setWalletTest}/>
@@ -38,6 +37,7 @@ function App() {
                 </TableHead>  
               </>}>
           </Route>
+          <Route path='*' element={<NoRes/>}/>
         </Route>
       </Routes>
     </>

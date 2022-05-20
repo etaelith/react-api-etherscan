@@ -1,10 +1,10 @@
 import Swal from 'sweetalert2'
 
-import {useFormulario} from '../hooks/useFormulario'
+import {useForm} from '../hooks/useForm'
 
 const FetchTest = ({setWalletTest}) => {
 
-    const [inputs, handleChange, reset] = useFormulario({
+    const [inputs, handleChange, reset] = useForm({
         walletAddressTest: '0x5c0db99e9B4BAcD45DF713FA0e8843664A8f9F25'
     })
     const {walletAddressTest} = inputs
@@ -24,7 +24,7 @@ const FetchTest = ({setWalletTest}) => {
     }
 
     return (
-        <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto">
             <form className='space-y-6' onSubmit={handleSubmitTest}>
             <h5 className="text-xl font-medium text-gray-900 dark:text-white">Wallet Address</h5>
                 <div className="mb-6">
