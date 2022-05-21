@@ -30,22 +30,36 @@ const PrintDateC = ({tableC}) => {
     
     const columns = [
         {
-            name: 'HASH',
-            selector: row => row.hash
+            name: 'From',
+            selector: row => row.from,
+            sortable: true
         },
         {
-            name: 'TIMESTAMP',
-            selector: row => row.timeStamp
+            name: 'Method',
+            selector: (row) => (row.from === tableC.toLowerCase()) ? 'output' : 'input',
+            sortable: true
         },
         {
-            name: 'GAS',
-            selector: row => row.gas
+            name: 'Gas Cost',
+            selector: row => (row.gasPrice * row.gasUsed) / Math.pow(10,18),
+            sortable: true
+        },
+        {
+            name: 'Date',
+            selector: row => new Date(row.timeStamp *1000).toLocaleDateString(),
+            sortable: true
+        },
+        {
+            name: 'Value Eth',
+            selector: row => row.value / Math.pow(10,18),
+            sortable: true
         },
     ]
   return (
     <DataTable
         columns={columns}
         data={tablet}
+        selectableRows
         pagination
     >
     </DataTable>

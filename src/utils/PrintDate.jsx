@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Loading from "../components/Loading";
 
-import Transaction from '../routes/Transaction';
+import Transaction from '../components/Transaction';
 
 const PrintDate = ({ walletTest } ) => {
     

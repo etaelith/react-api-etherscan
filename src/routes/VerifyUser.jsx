@@ -1,19 +1,16 @@
 import { useContext } from "react"
 import { UserContext } from "../context/UserProvider"
-import PrintDateC from "../utils/PrintDateC"
-import Loading from "./Loading"
+import Loading from "../components/Loading"
 
 
-const VerifyUser = ({tableC}) => {
+const VerifyUser = ({children}) => {
 
     const {user} = useContext(UserContext)
 
     if(!user){
         return <Loading/>
     }
-  return (
-    <PrintDateC tableC={tableC}/>
-  )
+  return children
 }
 
 export default VerifyUser

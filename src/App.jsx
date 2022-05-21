@@ -6,12 +6,12 @@ import NoRes from './components/NoRes';
 
 import useDarkMode from './hooks/useDarkMode';
 
-import FetchTest from './routes/FetchTest';
+import FetchTest from './utils/FetchTest';
 import PrintDate from './utils/PrintDate';
 
-import InputForm from './components/InputForm';
+import InputForm from './utils/InputForm';
+import VerifyUser from './routes/VerifyUser'
 import PrintDateC from './utils/PrintDateC';
-import VerifyUser from './components/VerifyUser';
 
 function App() {
   useDarkMode()
@@ -43,7 +43,7 @@ function App() {
           <Route path='/Tablet' element={
               <>
                 <InputForm setTableC={setTableC}/>
-                <VerifyUser tableC={tableC}/>
+                <VerifyUser><PrintDateC tableC={tableC}/></VerifyUser>
               </>}>
           </Route>
           <Route path='*' element={<NoRes/>}/>
