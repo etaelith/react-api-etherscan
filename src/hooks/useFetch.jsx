@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
- const UseFetch = (url) => {
+ const useFetch = (url) => {
     const API = process.env.REACT_APP_API;
     const [data, setData] = useState([])
     const [error, setError] = useState('')
@@ -10,7 +10,7 @@ import { useEffect, useState } from "react"
         setLoadingFetch(true)
         fetch(`https://api.etherscan.io/api?module=account&action=txlist&address=${(url)?url:'0x5c0db99e9B4BAcD45DF713FA0e8843664A8f9F25'}&startblock=0&endblock=99999999&page=1&sort=asc&apikey=${API}`)
             .then(res => res.json())
-            .then(data => setData(data.result))
+            .then(data => setData(data))
             .catch(e => setError(e))
             .finally(() => setLoadingFetch(false))
     }, [url])
@@ -18,4 +18,4 @@ import { useEffect, useState } from "react"
   return {data, error, loadingFetch}
 }
 
-export default UseFetch
+export default useFetch
